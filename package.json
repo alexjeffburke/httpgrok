@@ -1,0 +1,31 @@
+{
+  "name": "httppurview",
+  "version": "0.0.0",
+  "description": "HTTP traffic recorder",
+  "main": "register.js",
+  "scripts": {
+    "coverage": "nyc --reporter lcov --reporter text npm test",
+    "lint": "eslint .",
+    "test": "npm run test-exec",
+    "test-exec": "mocha test/integration/*.spec.js"
+  },
+  "author": "Alex J Burke <alex@alexjeffburke.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alexjeffburke/mocha-dominate.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "unexpected-mitm": "^13.1.0",
+    "pirates": "^4.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-pretty-standard": "^2.0.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
+    "prettier": "~1.18.2",
+    "unexpected": "^11.7.0"
+  }
+}

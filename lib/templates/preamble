@@ -1,0 +1,23 @@
+(function () {
+  // ensure the hooks are only registered once per process
+  if (typeof global.__httppurview === 'symbol') {
+    return;
+  }
+
+  global.__httppurview = Symbol('httppurview');
+
+  const HttpRecorder = require('{unexpected-mitm}/lib/UnexpectedMitmRecorder');
+
+  let completionResolve;
+  const completionPromise = new Promise(resolve => {
+    completionResolve = resolve;
+  });
+
+  const httpRecorder = new HttpRecorder().record(() => completionPromise).then(({ timeline }) => {
+    console.warn(JSON.stringify(timeline));
+  });
+
+  process.on('exit', () => {
+    completionResolve();
+  })
+})();
