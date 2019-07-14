@@ -12,7 +12,7 @@
   "author": "Alex J Burke <alex@alexjeffburke.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/alexjeffburke/mocha-dominate.git"
+    "url": "git://github.com/alexjeffburke/httppurview.git"
   },
   "license": "MIT",
   "dependencies": {
