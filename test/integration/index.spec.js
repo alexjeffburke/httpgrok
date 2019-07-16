@@ -135,4 +135,22 @@ describe("integration", () => {
       ])
     );
   });
+
+  it("should work with a shebang", () => {
+    const cwd = path.join(TESTDATA, "exampleshebang");
+
+    return expect(
+      () => spawnMochaInDir(cwd, ["-r", "../../register"]),
+      "to be fulfilled"
+    ).then(result =>
+      expect(result.stderr, "when parsed as JSON", "to satisfy", [
+        {
+          response: {
+            statusCode: 404,
+            body: {}
+          }
+        }
+      ])
+    );
+  });
 });
