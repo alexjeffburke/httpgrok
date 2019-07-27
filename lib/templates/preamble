@@ -7,15 +7,19 @@
   global.__httppurview = Symbol('httppurview');
 
   const HttpRecorder = require('{unexpected-mitm}/lib/UnexpectedMitmRecorder');
+  const checkTimeline = require('{unexpected-mitm}/lib/checkTimeline');
+  const formatRecordedExchange = require('{unexpected-mitm}/lib/formatRecordedExchange');
 
   let completionResolve;
   const completionPromise = new Promise(resolve => {
     completionResolve = resolve;
   });
 
-  const httpRecorder = new HttpRecorder().record(() => completionPromise).then(({ timeline }) => {
-    console.warn(JSON.stringify(timeline));
-  });
+  const httpRecorder = new HttpRecorder().record(() => completionPromise)
+    .then(checkTimeline)
+    .then(([recordedExchange]) => {
+      console.warn(JSON.stringify(recordedExchange.map(formatRecordedExchange)));
+    });
 
   process.on('exit', () => {
     completionResolve();
