@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "HTTP traffic recorder",
   "main": "register.js",
+  "files": [
+    "register.js",
+    "lib/*"
+  ],
   "scripts": {
     "coverage": "nyc --reporter lcov --reporter text npm test",
     "lint": "eslint .",
