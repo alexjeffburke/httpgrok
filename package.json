@@ -1,5 +1,5 @@
 {
-  "name": "httppurview",
+  "name": "httpgrok",
   "version": "0.0.0",
   "description": "HTTP traffic recorder",
   "main": "register.js",
@@ -12,7 +12,7 @@
   "author": "Alex J Burke <alex@alexjeffburke.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/alexjeffburke/mocha-dominate.git"
+    "url": "git://github.com/alexjeffburke/httpgrok.git"
   },
   "license": "MIT",
   "dependencies": {

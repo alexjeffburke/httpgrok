@@ -1,3 +1,3 @@
-require("./lib/httppurview")({
+require("./lib/httpgrok")({
   cwd: process.cwd()
 });

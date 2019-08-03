@@ -1,10 +1,10 @@
 (function () {
   // ensure the hooks are only registered once per process
-  if (typeof global.__httppurview === 'symbol') {
+  if (typeof global.__httpgrok === 'symbol') {
     return;
   }
 
-  global.__httppurview = Symbol('httppurview');
+  global.__httpgrok = Symbol('httpgrok');
 
   const HttpRecorder = require('{unexpected-mitm}/lib/UnexpectedMitmRecorder');
   const checkTimeline = require('{unexpected-mitm}/lib/checkTimeline');
